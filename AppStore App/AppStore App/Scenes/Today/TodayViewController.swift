@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 final class TodayViewController: UIViewController {
+    private var todayList: [Today] = []
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -32,18 +33,22 @@ final class TodayViewController: UIViewController {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
+        fetchData()
+        collectionView.reloadData()
     }
 }
 
 extension TodayViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return todayList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: "todayCell", for: indexPath) as? TodayCollectionViewCell
-        cell?.setup()
+        let today = todayList[indexPath.item]
+        cell?.setup(today: today)
         return cell ?? UICollectionViewCell()
     }
     
@@ -74,6 +79,27 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
         let inset: CGFloat = 16
         return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let today = todayList[indexPath.item]
+        let vc = AppDetailViewController(today: today)
+        
+        vc.setupLayout()
+        present(vc, animated: true)
+    }
+}
 
+private extension TodayViewController {
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "Today", withExtension: "plist") else { return }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Today].self, from: data)
+            todayList = result
+        } catch {
+            
+        }
+    }
 }
 
