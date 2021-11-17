@@ -23,6 +23,9 @@
 		B6F6E13A27429ED500C26027 /* BlogListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6E13927429ED500C26027 /* BlogListCell.swift */; };
 		B6F6E13C27429EE600C26027 /* BlogListCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6E13B27429EE600C26027 /* BlogListCellData.swift */; };
 		B6F6E1452742A69800C26027 /* AlertActionConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6E1442742A69800C26027 /* AlertActionConvertible.swift */; };
+		B6F6E14727450D7F00C26027 /* DKBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6E14627450D7F00C26027 /* DKBlog.swift */; };
+		B6F6E149274539FA00C26027 /* SearchBlogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6E148274539FA00C26027 /* SearchBlogAPI.swift */; };
+		B6F6E14C27453AFB00C26027 /* SearchBlogNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F6E14B27453AFB00C26027 /* SearchBlogNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		B6F6E13927429ED500C26027 /* BlogListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListCell.swift; sourceTree = "<group>"; };
 		B6F6E13B27429EE600C26027 /* BlogListCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListCellData.swift; sourceTree = "<group>"; };
 		B6F6E1442742A69800C26027 /* AlertActionConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionConvertible.swift; sourceTree = "<group>"; };
+		B6F6E14627450D7F00C26027 /* DKBlog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKBlog.swift; sourceTree = "<group>"; };
+		B6F6E148274539FA00C26027 /* SearchBlogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogAPI.swift; sourceTree = "<group>"; };
+		B6F6E14B27453AFB00C26027 /* SearchBlogNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBlogNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 				B6F6E110274293EC00C26027 /* AppDelegate.swift */,
 				B6F6E112274293EC00C26027 /* SceneDelegate.swift */,
 				B6F6E13D27429F0000C26027 /* Entities */,
+				B6F6E14A274539FF00C26027 /* Network */,
 				B6F6E13E27429F1500C26027 /* Presentation */,
 				B6F6E119274293EE00C26027 /* Assets.xcassets */,
 				B6F6E11B274293EE00C26027 /* LaunchScreen.storyboard */,
@@ -92,6 +99,7 @@
 			children = (
 				B6F6E13B27429EE600C26027 /* BlogListCellData.swift */,
 				B6F6E1442742A69800C26027 /* AlertActionConvertible.swift */,
+				B6F6E14627450D7F00C26027 /* DKBlog.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -146,6 +154,15 @@
 				B6F6E13927429ED500C26027 /* BlogListCell.swift */,
 			);
 			path = SubComponent;
+			sourceTree = "<group>";
+		};
+		B6F6E14A274539FF00C26027 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B6F6E148274539FA00C26027 /* SearchBlogAPI.swift */,
+				B6F6E14B27453AFB00C26027 /* SearchBlogNetwork.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,12 +249,15 @@
 			files = (
 				B6F6E1322742951D00C26027 /* MainViewController.swift in Sources */,
 				B6F6E13A27429ED500C26027 /* BlogListCell.swift in Sources */,
+				B6F6E14727450D7F00C26027 /* DKBlog.swift in Sources */,
 				B6F6E13827429EC800C26027 /* BlogList.swift in Sources */,
+				B6F6E149274539FA00C26027 /* SearchBlogAPI.swift in Sources */,
 				B6F6E13C27429EE600C26027 /* BlogListCellData.swift in Sources */,
 				B6F6E1342742966900C26027 /* SearchBar.swift in Sources */,
 				B6F6E111274293EC00C26027 /* AppDelegate.swift in Sources */,
 				B6F6E13627429D3400C26027 /* FilterView.swift in Sources */,
 				B6F6E113274293EC00C26027 /* SceneDelegate.swift in Sources */,
+				B6F6E14C27453AFB00C26027 /* SearchBlogNetwork.swift in Sources */,
 				B6F6E1452742A69800C26027 /* AlertActionConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
